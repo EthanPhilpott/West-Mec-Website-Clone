@@ -1,0 +1,85 @@
+/* Set up */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    cursor: none;
+
+    /* Colors */
+    --background-black: #1A1A1A;
+    --background-white: #ffffff;
+
+    --wm-orange: #F7941D;
+}
+
+/* Common Classes */
+
+.margin-ver-align {
+    margin: auto 0;
+}
+
+.margin-hor-align {
+    margin: 0 auto;
+}
+
+.flex-hor-center {
+    display: flex;
+    justify-content: center;
+}
+
+.flex-ver-center {
+    display: flex;
+    align-items: center;
+}
+
+.flex-col {
+    flex-direction: column;
+}
+
+/*  */
+
+.begining {
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background-black);
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.begining img {
+    width: 20vw;
+    height: 20vw;
+}
+
+.begining p {
+    font-family: 'Open Sans', sans-serif;
+    text-transform: uppercase;
+    color: var(--background-white);
+    font-size: 3vw;
+    margin: 1vw 0;
+    font-weight: bold;
+}
+
+.themes {
+    display: flex;
+    justify-content: center;
+}
+
+.themes .dark-theme, .themes .light-theme {
+    width: 10vw;
+    height: 10vw;
+    border-radius: 50%;
+    margin: 0 3vw;
+}
+
+.themes .dark-theme {
+    background-color: var(--background-black);
+}
+
+.themes .light-theme {
+    background-color: var(--background-white);
+    border: solid 0.25vw var(--wm-orange);
+}
