@@ -1,3 +1,6 @@
 mouseX = MouseEvent.clientX
 mouseY = MouseEvent.clientY
-console.log(mouseX, mouseY)
+
+document.body.onmouseover = function () {
+    console.log(mouseX, mouseY)
+}
