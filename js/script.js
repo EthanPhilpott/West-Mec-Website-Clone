@@ -1,6 +1,14 @@
-mouseX = MouseEvent.clientX
-mouseY = MouseEvent.clientY
+const MAX_STRETCH = 1.5; // defines the amount the cursor can stretch in acordance to the size of the orginal cursor
+const FRICTION = 0.1; // Amount fo friction 
 
-document.body.onmouseover = function () {
-    console.log(mouseX, mouseY)
-}
+let cursor = document.getElementById("cursor");
+
+document.addEventListener("mousemove", (e) => {
+    var mouseX = e.clientX;
+    var mouseY = e.clientY;
+})
+
+var cursorX = cursor.clientX;
+var cursorY = cursor.clientY;
+
+function Cursor
