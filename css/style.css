@@ -4,12 +4,16 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    /* cursor: none; */
+    cursor: none;
 
     /* Colors */
     --background-black: #1A1A1A;
     --background-white: #ffffff;
     --wm-orange: #F7941D;
+}
+
+body {
+    overflow: hidden;
 }
 
 /* Common Classes */
@@ -38,23 +42,18 @@
 
 /* Cursors */
 
-.click {
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: radial-gradient(rgb(0, 0, 0, 0), var(--wm-orange));
-    position: absolute;
-    z-index: 99;
-}
-
 #cursor {
     width: 7.5px;
     height: 7.5px;
     border-radius: 50%;
     background-color: var(--wm-orange);
-    position: absolute;
+    border: solid 0.5px var(--background-black);
 
     transform: none;
+}
+
+.particle {
+    background-color: var(--wm-orange);
 }
 
 /*  */

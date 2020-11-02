@@ -6,7 +6,8 @@ class Cursor {
     constructor (cursorHTML, friction, speed) {
         this.cursor = cursorHTML;
         this.friction = friction;
-        this.speed = speed * 1000;
+        this.speed = speed;
+
         this.precision = 2;
 
         this.mouse = {x: 0, y: 0};
@@ -30,16 +31,15 @@ class Cursor {
     }
 
     Update () {
-        this.translation.x = (this.mouse.x - this.translation.x) * this.friction;
-        this.translation.y = (this.mouse.y - this.translation.y) * this.friction;
+        this.translation.x += (this.mouse.x - this.translation.x) * this.friction;
+        this.translation.y += (this.mouse.y - this.translation.y) * this.friction;
     }
 
     Render () {
         this.Update()
         this.cursor.style.transform = "translate(" + this.translation.x.toFixed(this.precision) + 'px, ' + this.translation.y.toFixed(this.precision) + 'px)';
-        console.log(this.cursor.style.transform)
     }
 }
 
-cursor = new Cursor(document.getElementById('cursor'), 0.1, 1)
+cursor = new Cursor(document.getElementById('cursor'), 0.05, 1);
 
