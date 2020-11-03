@@ -13,6 +13,9 @@ class Cursor {
         this.mouse = {x: 0, y: 0};
         this.translation = {x: 1, y: 1};
         
+        this.cursor.style.width  = "7.5px"
+        this.cursor.style.height = "7.5px"
+
         this.Events();
         this.Animate();
     }
@@ -21,7 +24,31 @@ class Cursor {
         window.addEventListener ("mousemove", (e) => {
             this.mouse.x = e.clientX;
             this.mouse.y = e.clientY;
-        }) 
+        })
+        window.addEventListener ("mousedown", () => {
+            let size = 7.5;
+            let id = setInterval(() => {
+                if (size == 5){
+                    clearInterval(id)
+                } else {
+                    this.cursor.style.width  = size + "px";
+                    this.cursor.style.height = size + "px";
+                    size -= 0.5;
+                }
+            }, 25)
+        })
+        window.addEventListener ("mouseup", () => {
+            let size = 5;
+            let id = setInterval(() => {
+                if (size == 7.5){
+                    clearInterval(id)
+                } else {
+                    this.cursor.style.width  = size + "px";
+                    this.cursor.style.height = size + "px";
+                    size += 0.5;
+                }
+            }, 25)
+        })
     }
 
     Animate () {

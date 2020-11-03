@@ -48,6 +48,10 @@ body {
     border-radius: 50%;
     background-color: var(--wm-orange);
     border: solid 0.5px var(--background-black);
+    left: -3.75px;
+    top: -3.75px;
+    position: absolute;
+    pointer-events: none;
 
     transform: none;
 }
